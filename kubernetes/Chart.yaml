@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for running Magento2 on Kubernetes
+name: mean-magento2
+version: 0.1.0

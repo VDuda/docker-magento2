@@ -1,0 +1,49 @@
+# Default values for kubernetes.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+service:
+  varnish: 
+    repo: meanbee/magento2-varnish
+    tag: latest
+  web: 
+    repo: meanbee/magento2-nginx
+    tag: 1.9
+  fpm: 
+    repo: meanbee/magento2-php
+    tag: 7.0-fpm
+  db: 
+    repo: mariadb
+    tag: 10
+  cli:
+    repo: meanbee/magento2-php
+    tag: 7.0-cli
+  cron:
+    repo: meanbee/magento2-php
+    tag: 7.0-cli
+  pullPolicy: IfNotPresent
+
+
+network:
+  varnish: 
+    internalPort: 80
+  web: 
+    internalPort: 80
+  fpm:
+    internalPort: 9000 
+  db: 
+    internalPort: 3306
+  trafficPort: 80
+  trafficSecurePort: 443
+
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
